@@ -15,6 +15,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:studioapps/subject.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
+import 'chatgpt.dart';
+
 void main()   async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -32,7 +34,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'EdTech-pdf',
+      title: 'EdTech',
       home: SplashScreen(),
     );
   }
@@ -45,7 +47,19 @@ class AddData extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.blue.shade900
           ,
-        title:  Text('EdTech-pdf',style: GoogleFonts.georama(
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(child: CircleAvatar(
+            backgroundColor: const Color.fromRGBO(16, 163, 127, 1),
+            child: Image.asset(
+              'assets/bot.png',
+              color: Colors.white,
+              scale: 1.4,
+            ),
+          ),
+          onTap: (){Get.to(()=>Chatgpt());},),
+        ),
+        title:  Text('EdTech',style: GoogleFonts.georama(
 
           fontSize: 30,
           color: Colors.white,
@@ -125,7 +139,7 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:  [
-              Text("EdTech-pdf",style: GoogleFonts.roboto (
+              Text("EdTech",style: GoogleFonts.roboto (
           textStyle: Theme.of(context).textTheme.headline4,
         fontSize: 48,
         color: Colors.white,

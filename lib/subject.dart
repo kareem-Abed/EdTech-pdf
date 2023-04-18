@@ -12,7 +12,7 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 Color myColor =  Colors.blue.shade900;
 Color myColor2 =  Colors.grey;
 Color TextColor =  Colors.white;
-String title="EdTech-pdf";
+String title="EdTech";
 Stream<List<user>> readuser()=>FirebaseFirestore.instance.collection('sub1').snapshots().map((snapshot) =>
     snapshot.docs.map((doc) => user.Fromjason( doc.data())).toList());
 
