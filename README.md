@@ -1,7 +1,4 @@
-# studioapps
-
-A new Flutter project.
-
+# EdTech
 ## Getting Started
 
 This project is a starting point for a Flutter application.
